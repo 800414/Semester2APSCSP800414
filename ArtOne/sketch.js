@@ -2,13 +2,13 @@
 // 	1/28/20
 //  ArtOne
 //  The setup function function is called once when your program begins
-var boids = [];
+var boids = [];  //global variable to make boids
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(255);
   fill(200, 30, 150);
-  loadBoids(10);
+  loadBoids(10); //ten boids appear on screen
 
 
 }

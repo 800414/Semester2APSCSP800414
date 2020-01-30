@@ -1,5 +1,5 @@
 class Boid {
- constructor(x,y,dx,dy){
+ constructor(x,y,dx,dy){  //factors of boid, location, velocity, acceleration, color
    this.loc = createVector(x, y);
    this.vel = createVector(dx, dy);
    this.acc = createVector(0,0);
@@ -11,19 +11,20 @@ class Boid {
    this.checkEdges();
  }
  update(){
-this.vel.limit(3);
-this.vel.add(this.acc);
-this.loc.add(this.vel);
+this.vel.limit(3);  //setting velocity of boid to three
+this.vel.add(this.acc);  //add acceleration to velocity
+this.loc.add(this.vel);  //add velocity to acceleration
  }
 
  render(){
-fill(this.clr);
-ellipse(this.loc.x, this.loc.y, 30, 30);
-fill(147,112,219);
-//for var i = boids.length-1; i>0;
-line(this.loc.x, this.loc.y,100,100)
+for (var i = boids.length-1; i>0; i--){  //determine if biods are less than 200 pixels apart
+  if(this.loc.dist(boids[i].loc)<200){
+    stroke(this.clr);  //draw line
+    line(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y);
+  }
+}
  }
- checkEdges(){
+ checkEdges(){  //boids bounce off edges of screen 
    if(this.loc.x < 0){
      this.vel.x = -this.vel.x;
    }
