@@ -18,13 +18,15 @@ this.loc.add(this.vel);  //add velocity to acceleration
 
  render(){
 for (var i = boids.length-1; i>0; i--){  //determine if biods are less than 200 pixels apart
+  //fill(this.clr);
+  //ellipse(this.loc.x,this.loc.y, 59, 72);
   if(this.loc.dist(boids[i].loc)<200){
     stroke(this.clr);  //draw line
     line(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y);
   }
 }
  }
- checkEdges(){  //boids bounce off edges of screen 
+ checkEdges(){  //boids bounce off edges of screen
    if(this.loc.x < 0){
      this.vel.x = -this.vel.x;
    }

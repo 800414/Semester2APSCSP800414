@@ -8,7 +8,7 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(255);
   fill(200, 30, 150);
-  loadBoids(10); //ten boids appear on screen
+  loadBoids(80); //eighty boids appear on screen
 
 
 }
@@ -20,7 +20,7 @@ runBoids();
 
 function loadBoids(n){
   for(var i = 0; i < n; i++){
-    boids[i] = new Boid(random(100,700),random(100,700), random(-2,2), random(-2,2));
+    boids[i] = new Boid(400,400, random(-2,2), random(-2,2));
 }
 }
 function runBoids(){
