@@ -1,6 +1,6 @@
 //  Olivia Cordero
-// 	1/28/20
-//  ArtOne
+// 	1/30/20
+//  ArtTwo
 //  The setup function function is called once when your program begins
 var boids = [];  //global variable to make boids
 function setup() {
@@ -14,17 +14,17 @@ function setup() {
 }
 
 //  The draw function is called @ 30 fps
-function draw(){
+function draw(){  //run runBoids function
 runBoids();
 }
 
-function loadBoids(n){
+function loadBoids(n){  //make array of boids appear
   for(var i = 0; i < n; i++){
-    boids[i] = new Boid(400,400, random(-2,2), random(-2,2));
+    boids[i] = new Boid(400,400, random(-2,2), random(-2,2)); //appear at middle of the screen, velocity and acceleration in between -2 and 2
 }
 }
 function runBoids(){
-  for(var i = 0; i < boids.length; i++){
+  for(var i = 0; i < boids.length; i++){ //run boid
     boids[i].run();
   }
 }
