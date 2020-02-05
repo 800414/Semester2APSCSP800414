@@ -1,10 +1,7 @@
-/*
- * twisted lines
- *
- * @author aadebdeb
- * @date 2017/02/04
- */
-
+//Olivia Cordero
+//02/05/20
+//MyArtProject
+//The setup  function is called once when your program begins
 var colors;
 var type;
 
