@@ -4,14 +4,15 @@
 //The setup  function is called once when your program begins
 var colors;
 var type;
+var boids = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
+  loadBoids(50);
   colors = [
-    color(255, 0, 0),
-    color(0, 255, 0),
-    color(0, 0, 255)
+    color(204, 102, 255),
+    color(204, 153, 255),
+    color(204, 204, 255)
   ];
 
   type = 0;
@@ -21,11 +22,11 @@ function draw() {
   blendMode(BLEND);
 
   if(type == 0) {
-    background(255);
-    blendMode(EXCLUSION);
-  } else {
     background(0);
     blendMode(SCREEN);
+  } else {
+    background(255, 0, 102);
+    blendMode(EXCLUSION);
   }
   noFill();
   strokeWeight(20);
@@ -39,7 +40,7 @@ function draw() {
     }
     endShape();
   }
-
+  runBoids();
 }
 
 function mousePressed() {
@@ -47,5 +48,16 @@ function mousePressed() {
     type = 1;
   } else {
     type = 0;
+  }
+}
+
+function loadBoids(n){
+  for(var i = 0; i < n; i++){
+    boids[i] = new Boid(random(100,700),random(100,700), random(-2,2), random(-2,2));
+}
+}
+function runBoids(){
+  for(var i = 0; i < boids.length; i++){
+    boids[i].run();
   }
 }
