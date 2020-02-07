@@ -6,7 +6,7 @@ class Boid {
  constructor(x,y,dx,dy){  //factors of boid, location, velocity, acceleration, color
    this.loc = createVector(x, y);
    this.vel = createVector(dx, dy);
-   this.acc = createVector(0,0);
+   this.acc = createVector(3,3);
    this.clr = color(random(255), random(255), random(255));
  }
  run(){
@@ -15,7 +15,7 @@ class Boid {
    this.checkEdges();
  }
  update(){
-this.vel.limit(10);  //setting velocity of boid to three
+this.vel.limit(10);  //setting velocity of boid to ten
 this.vel.add(this.acc);  //add acceleration to velocity
 this.loc.add(this.vel);  //add velocity to acceleration
 if(this.loc.y < 200){
@@ -28,8 +28,9 @@ if(this.loc.y < 600){
 
  render(){
 for (var i = boids.length-1; i>0; i--){  //determine if boids are less than 200 pixels apart
-  if(this.loc.dist(boids[i].loc)<200){
-    stroke(this.clr);  //draw line
+  var d = this.loc.dist(boids[i].loc)
+  if(d<200){
+    stroke(192, 192, 192, 10);  //draw line
     line(this.loc.x, this.loc.y, boids[i].loc.x, boids[i].loc.y);
   }
 }
@@ -37,15 +38,19 @@ for (var i = boids.length-1; i>0; i--){  //determine if boids are less than 200 
  checkEdges(){  //boids bounce off edges of screen
    if(this.loc.x < 0){
      this.vel.x = -this.vel.x;
+     this.acc.x = -this.acc.x;
    }
    if(this.loc.x > width){
      this.vel.x = -this.vel.x;
+     this.acc.x = -this.acc.x;
    }
    if(this.loc.y < 0){
      this.vel.y = -this.vel.y;
+     this.acc.y = -this.acc.y;
    }
    if(this.loc.y > height){
      this.vel.y = -this.vel.y;
+     this.acc.y = -this.acc.y;
  }
 }
 }

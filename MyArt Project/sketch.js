@@ -8,7 +8,7 @@ var boids = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  loadBoids(50);
+  loadBoids(40);
   colors = [
     color(204, 102, 255),
     color(204, 153, 255),
