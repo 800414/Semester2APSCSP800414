@@ -5,7 +5,7 @@
 var colors;  //defining global variables
 var type;
 var boids = [];
-var toggle = 1;
+var toggle = 1;  //toggle variable controls when boids start and stop moving
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -17,7 +17,7 @@ function setup() {
   ];
 
   type = 0;
-}
+}//end setup function+++++++++++++++++++++++++++++++++++++++++++++++++
 
 function draw() {
   blendMode(BLEND);
@@ -41,7 +41,7 @@ function draw() {
     endShape();
   }
   runBoids();  //boids run in background
-}
+}//end draw++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 function mousePressed() {
   toggle = -toggle;  //negative toggle = boids stop moving
@@ -50,15 +50,15 @@ function mousePressed() {
   } else {
     type = 0;
   }
-}
+}//end mousepressed++++++++++++++++++++++++++++++++++++++++++++++++
 
 function loadBoids(n){  // how boids appear on random areas of screen
   for(var i = 0; i < n; i++){
     boids[i] = new Boid(random(100,700),random(100,700), random(-2,2), random(-2,2));
 }
-}
+}//end loadBoids+++++++++++++++++++++++++++++++++++++++++++++++++++++
 function runBoids(){
   for(var i = 0; i < boids.length; i++){
     boids[i].run();  //run boid array
   }
-}
+}//end runBoids++++++++++++++++++++++++++++++++++++++++++++++++++++++++
