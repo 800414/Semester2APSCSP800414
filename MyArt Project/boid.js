@@ -1,6 +1,6 @@
 //  Olivia Cordero
-// 	1/30/20
-//  ArtTwo
+// 	2/05/20
+//  MyArtProject
 //  The setup function function is called once when your program begins
 class Boid {
   constructor(x,y,dx,dy){  //factors of boid, location, velocity, acceleration, color
