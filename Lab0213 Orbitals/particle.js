@@ -13,39 +13,43 @@ class Particle{
     this.loadOrbiters(1);
     this.angle = random(TWO_PI);
   }
-
+//end constructor+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   loadOrbiters(n){
     for(var i = 0; i < n; i++){
       this.orbiters.push(new Orbiter(5, color(120,88,40)));
     }
   }
+  //end loadOrbiters++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   run(){
     this.update();
     this.render();
     this.checkEdges();
   }
+  //end run++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   update(){
-      this.acc.x = random(-.5, .5);
-      this.acc.y = random(-.5, .5);
-      this.vel.add(this.acc);
+      this.acc.x = random(-.5, .5);  //acceleration determining left and right movement
+      this.acc.y = random(-.5, .5);  //acceleration determining up and down movement
+      this.vel.add(this.acc);  //add acceleration to velocity
       this.vel.limit(10);
-      this.loc.add(this.vel);
+      this.loc.add(this.vel);  //add velocity to location
       this.rad += 0.02;
       this.angle += .41;
   }
+  //end update+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   render(){
     fill(100,50,70);
-    ellipse(this.loc.x, this.loc.y, 30, 30);
+    ellipse(this.loc.x, this.loc.y, 30, 30);  //randomly colored ellipses are particles
     fill(color(random(255), random(255), random(255)));
     for(var i = 0; i < this.orbiters.length; i++){
-      var ox = this.loc.x + 30*cos(this.angle);
-      var oy = this.loc.y + 30*sin(this.angle);
-      ellipse(ox, oy, 5);
+      var ox = this.loc.x + 30*cos(this.angle);  //determine orbital x value
+      var oy = this.loc.y + 30*sin(this.angle);  //determine orbital y value
+      ellipse(ox, oy, 5);  //how to draw orbital
     }
 
     strokeWeight(0.25);
     stroke(this.clr);
   }
+  //end render++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   checkEdges(){  //boids bounce off edges of screen
     if(this.loc.x < 0){
       this.vel.x = -this.vel.x;
@@ -64,4 +68,6 @@ class Particle{
       this.acc.y = -this.acc.y;
     }
   }
+  //end checkEdges+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }
+//end class Particle++++++++++++++++++++++++++++++++++++++++++++++++++++++++
