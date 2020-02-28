@@ -15,7 +15,7 @@ function setup() {
   background(5, 5, 5);
   fill(140, 40, 200);
   frameRate(10);
-  loadObjects(1);
+  loadObjects();
   createButtons();
 }
 
@@ -39,11 +39,13 @@ function createButtons(){  //making buttons with different functions
   playAgainButton = new Button(370, 460, 'PLAY AGAIN!');
 }
 
-function loadObjects(n){  //appearance of snake and food
+function loadObjects(){  //appearance of snake and food
     snake = new Snake (400,400,20,20);
     food = new Food(random(70,700), random(50,400), this.w, this.h);
-    poison = new Poison(random(70,700), random(50,400), this.w, this.h);
-}
+    poison = new Poison(random(70,700), random(50,400), this.w, this.h, random(4, 7), random(4, 7));
+
+  }
+
 
 function startGame(){ //starting splash screen
   background(100,80,200);
@@ -56,7 +58,7 @@ function startGame(){ //starting splash screen
   text('Your snake will begin as one box, but upon moving another box will appear.', 120, 370);
   text('This second box is the body of your snake.', 120, 390)
   text('Try to eat the food, and your snake will grow!', 120, 410);
-  text('Be careful to avoid the edges of the screen!', 120, 430);
+  text('Be careful to avoid the edges of the screen and the red poison box!', 120, 430);
   text('Also make sure your snake does not get tangled in itself!', 120, 450);
   text('If either of these things happen, game over!', 120, 470);
   text('Have fun!', 120, 490);
