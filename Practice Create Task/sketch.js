@@ -1,6 +1,6 @@
 //  olivia cordero
-// 	11/20
-//  snake game
+// 	2/26
+//  snake game practice create task
 //  The setup function is called once when your program begins
 var snake;  //defining global variables
 var food;
@@ -99,6 +99,7 @@ function endGame(){
   snake.vel = createVector(0,0); //starts not moving
   keyCode = CONTROL;
   gameState = 1;  //go to start screen
+  score = 0;
   startGame();
     }
 }

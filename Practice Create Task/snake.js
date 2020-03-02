@@ -1,6 +1,6 @@
 //  olivia cordero
-// 	11/20
-//  snake game
+// 	2/26
+//  snake game practice create task
 //  The setup function is called once when your program begins
 class Snake {
   constructor(x, y, w, h){  //properties of snake

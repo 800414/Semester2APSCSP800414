@@ -24,7 +24,7 @@ class Poison {
          }
        }
   render(){
-    fill(255, 0, 0); //food object
+    fill(255, 0, 0); //poison object
     rect (this.poison.x, this.poison.y, poison.w, poison.h);
   }
   checkEdges(){  //boids bounce off edges of screen
