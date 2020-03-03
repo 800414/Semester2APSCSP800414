@@ -1,22 +1,22 @@
 class Poison {
-  constructor(x, y, w, h, dx, dy){  //properties of food
+  constructor(x, y, w, h, dx, dy){  //properties of poison
     this.poison = createVector(x, y);
-    this.w = 20;
-    this.h = 20;
+    this.w = 40;
+    this.h = 40;
     this.vel = createVector(dx, dy);
     this.acc = createVector(4,4);
   }
-  run(){  //calling upon food functions
+  run(){  //calling upon poison functions
     this.update();
     this.render();
     this.checkEdges();
   }
   update(){
-    this.vel.limit(20); //how fast balls can go
+    this.vel.limit(20); //how fast poison object can go
     this.vel.add(this.acc);
     this.poison.add(this.vel);
     var i = 0;
-     if(snake.head.x + 15 >= this.poison.x &&  //if snake head collides with food
+     if(snake.head.x + 15 >= this.poison.x &&  //if snake head collides with poison, end game
          snake.head.x - 15 <= this.poison.x + this.w &&
          snake.head.y + 15 > this.poison.y &&
          snake.head.y - 15 < this.poison.y + this.h){
@@ -24,10 +24,10 @@ class Poison {
          }
        }
   render(){
-    fill(255, 0, 0); //poison object
+    fill(color(random(255), random(255), random(255))); //poison object
     rect (this.poison.x, this.poison.y, poison.w, poison.h);
   }
-  checkEdges(){  //boids bounce off edges of screen
+  checkEdges(){  //poison bounce off edges of screen
     if(this.poison.x < 0){
       this.vel.x = -this.vel.x;
       this.acc.x = -this.acc.x;
