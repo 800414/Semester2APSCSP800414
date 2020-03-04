@@ -1,5 +1,5 @@
 //  olivia cordero
-// 	11/20
+// 	2/26
 //  snake game
 //  The setup function is called once when your program begins
 class Food {

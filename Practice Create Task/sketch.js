@@ -58,7 +58,7 @@ function startGame(){ //starting splash screen
   text('Your snake will begin as one box, but upon moving another box will appear.', 120, 370);
   text('This second box is the body of your snake.', 120, 390)
   text('Try to eat the food, and your snake will grow!', 120, 410);
-  text('Be careful to avoid the edges of the screen and the red poison box!', 120, 430);
+  text('Be careful to avoid the edges of the screen and the flashing poison box!', 120, 430);
   text('Also make sure your snake does not get tangled in itself!', 120, 450);
   text('If either of these things happen, game over!', 120, 470);
   text('Have fun!', 120, 490);
