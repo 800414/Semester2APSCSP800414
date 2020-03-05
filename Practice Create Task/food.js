@@ -1,6 +1,6 @@
 //  olivia cordero
 // 	2/26
-//  snake game
+//  snake game practice create task
 //  The setup function is called once when your program begins
 class Food {
   constructor(x, y, w, h){  //properties of food

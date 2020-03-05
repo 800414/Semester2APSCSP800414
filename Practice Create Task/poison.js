@@ -1,3 +1,7 @@
+//  olivia cordero
+// 	2/26
+//  snake game practice create task
+//  The setup function is called once when your program begins
 class Poison {
   constructor(x, y, w, h, dx, dy){  //properties of poison
     this.poison = createVector(x, y);

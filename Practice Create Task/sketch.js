@@ -39,7 +39,7 @@ function createButtons(){  //making buttons with different functions
   playAgainButton = new Button(370, 460, 'PLAY AGAIN!');
 }
 
-function loadObjects(){  //appearance of snake and food
+function loadObjects(){  //appearance of snake, food, and poison
     snake = new Snake (400,400,20,20);
     food = new Food(random(70,700), random(50,400), this.w, this.h);
     poison = new Poison(random(70,700), random(50,400), this.w, this.h, random(4, 7), random(4, 7));
