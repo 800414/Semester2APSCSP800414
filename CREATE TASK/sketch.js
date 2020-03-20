@@ -1,6 +1,6 @@
-//  Olivia Cordero
-// Sept 03
-//  PaddleBall
+//  Olivia Cordero (dont include this in submission cuz name)
+// March 20
+//  CREATE TASK
 //  The setup function function is called once when your program begins
 
 
@@ -10,6 +10,7 @@ var score = 0;
 var lives = 5;
 var gameState = 1;
 var button = []
+var particles = [];
 var EasyButton;
 var MediumButton;
 var HardButton;
@@ -42,6 +43,9 @@ if(gameState === 1){  //different screens/modes of games
 }else if(gameState === 5){
   quitGame();
 }
+for(var i = 0; i < particles.length; i++){
+  particles[i].run();
+}
 }
 
 
@@ -49,7 +53,11 @@ function loadObjects(n) { //make balls and paddle appear
   for(var i = 0; i < n; i++){
     balls[i] = new Ball(random(800),random(300), random(4, 7), random(4, 7));
   }
+  for(var i = 0; i < n; i++){
+      particles[i] = new Particle(random(10, 700), random(10, 700));
+  }
     paddle = new Paddle(250, 700, 300, 50);
+
 }
 
 //function loadButtons(n) {

@@ -1,6 +1,6 @@
-//Olivia Cordero
-//9/11/19
-//PaddleBall GAME
+//Olivia Cordero (delete later)
+//March 20
+//CREATE TASK
 //setup function is called upon once when program begins
 
 

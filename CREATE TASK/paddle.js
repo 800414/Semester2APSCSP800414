@@ -1,6 +1,6 @@
-// Olivia Cordero
-//9/11 PaddleBall
-// CollisionDetection
+// Olivia Cordero (delete for submission)
+//March 20
+// CREATE TASK
 // The setup function is called once when your program begins
 
 class Paddle {
