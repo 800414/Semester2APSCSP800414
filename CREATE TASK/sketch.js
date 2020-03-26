@@ -43,9 +43,6 @@ if(gameState === 1){  //different screens/modes of games
 }else if(gameState === 5){
   quitGame();
 }
-for(var i = 0; i < particles.length; i++){
-  particles[i].run();
-}
 }
 
 
@@ -126,6 +123,8 @@ textSize(30);
 text("Score: " + score, 10, 25); //score in top left corner
 text("Lives: " + lives, 10, 60); //number of lives in top left corner below score
 runObjects();
+for(var i = 0; i < particles.length; i++){
+  particles[i].run();
   if(score===balls.length + score){  //win once all balls are cleared
     gameState=4;
   }
@@ -195,4 +194,5 @@ function quitGame(){  //quit game scrren
   textSize(50);
   text('BYE!', 300, 300);
   text('HOPE YOU ENJOYED!:)', 150, 360);
+}
 }
