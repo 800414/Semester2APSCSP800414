@@ -51,7 +51,7 @@ function loadObjects(n) { //make balls and paddle appear
     balls[i] = new Ball(random(800),random(300), random(4, 7), random(4, 7));
   }
   for(var i = 0; i < n; i++){
-      particles[i] = new Particle(random(10, 700), random(10, 700));
+      particles[i] = new Particle(random(10, 700), random(10, 100));
   }
     paddle = new Paddle(250, 700, 300, 50);
 
@@ -135,8 +135,11 @@ for(var i = 0; i < particles.length; i++){
 
 function runObjects(){
   paddle.run();
-  for(var i = 0; i < balls.length; i++) balls[i].run();
+  for(var i = 0; i < balls.length; i++){
+    balls[i].run();
+  }
 }
+
 function endGame(){ //lose screen
   background(255,50,100,10);
   textSize(50);
@@ -159,8 +162,7 @@ if(mouseIsPressed && //quit game
     mouseX <= 630 &&
     mouseY >= 450 &&
     mouseY <= 530){
-      gameState = 5; //quitting game screen
-
+    gameState = 5; //quitting game screen
     }
   }
   function winGame(){ //win screen

@@ -34,6 +34,13 @@ class Particle{
       this.loc.add(this.vel);  //add velocity to location
       this.rad += 0.02;
       this.angle += .41;
+      for(var i = particles.length - 1; i>= 0; i--){
+        if(particles[i].isColliding() && this.vel.y > 0) {
+          gameState=3;
+        }else if(particles[i].isColliding() && this.vel.y < 0){
+        gameState=3;
+      }
+      }
   }
   //end update+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   render(){
@@ -69,5 +76,15 @@ class Particle{
     }
   }
   //end checkEdges+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-}
+
+  isColliding() {
+    if(this.loc.x + 20 > paddle.loc.x &&
+       this.loc.x - 20 < paddle.loc.x + paddle.w &&
+       this.loc.y + 20 > paddle.loc.y &&
+       this.loc.y - 20 < paddle.loc.y + paddle.h) //bounce off paddle
+       {
+         return true;
+        }
+      }
+    }
 //end class Particle++++++++++++++++++++++++++++++++++++++++++++++++++++++++
