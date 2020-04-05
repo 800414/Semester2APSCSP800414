@@ -158,6 +158,7 @@ if(mouseIsPressed && //restart game
      score = 0;
      lives = 5;
      gameState = 1;
+     particles = [];
     }
 if(mouseIsPressed && //quit game
     mouseX >= 550 &&
@@ -183,6 +184,7 @@ if(mouseIsPressed && //quit game
          balls = [];
          score = 0;
          lives = 5;
+         particles = [];
          gameState = 1;
         }
       if(mouseIsPressed && //quit game

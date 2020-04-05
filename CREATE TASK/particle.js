@@ -16,7 +16,7 @@ class Particle{
 //end constructor+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   loadOrbiters(n){
     for(var i = 0; i < n; i++){
-      this.orbiters.push(new Orbiter(5, color(120,88,40)));
+      this.orbiters.push(new Orbiter(5, color(50,88,40)));
     }
   }
   //end loadOrbiters++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
