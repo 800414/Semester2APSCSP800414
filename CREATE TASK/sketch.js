@@ -76,7 +76,9 @@ function startGame(){ //starting splash screen
   text('Try to keep the balls from touching the bottom of the paddle.', 120, 390);
   text('When the ball reaches the bottom, the amount of lives will decrease by one', 120, 410);
   text('And a new array of balls will appear.', 120, 430)
-  text('If the number of lifes equals zero, game over!', 120, 450);
+  text('If the number of lives equals zero, game over!', 120, 450);
+  text("Also, avoid the balls with orbitals!", 120, 470);
+  text("If your paddle touches those, game over!",120,490);
   createButtons();
   if(mouseIsPressed &&
       mouseX > 170 &&
