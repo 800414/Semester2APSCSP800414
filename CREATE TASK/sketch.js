@@ -120,7 +120,7 @@ function createButtons(){  //making buttons with different functions
 }
 
 function playGame(){
-  fill(0, 255, 255);
+fill(0, 255, 255);
 textSize(30);
 text("Score: " + score, 10, 25); //score in top left corner
 text("Lives: " + lives, 10, 60); //number of lives in top left corner below score

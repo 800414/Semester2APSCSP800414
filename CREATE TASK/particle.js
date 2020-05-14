@@ -38,7 +38,7 @@ class Particle{
         if(particles[i].isColliding() && this.vel.y > 0) {
           gameState=3;
         }else if(particles[i].isColliding() && this.vel.y < 0){
-        gameState=3;
+         gameState=3;
       }
       }
   }
