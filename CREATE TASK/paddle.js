@@ -1,8 +1,3 @@
-// Olivia Cordero (delete for submission)
-//March 20
-// CREATE TASK
-// The setup function is called once when your program begins
-
 class Paddle {
   constructor(x, y, w, h){  //factors of paddle
    this.loc = createVector(x, y);

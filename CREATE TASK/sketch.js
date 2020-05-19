@@ -1,9 +1,3 @@
-//  Olivia Cordero (dont include this in submission cuz name)
-// March 20
-//  CREATE TASK
-//  The setup function function is called once when your program begins
-
-
 var paddle;
 var balls = []
 var score = 0;
@@ -65,10 +59,8 @@ function startGame(){ //starting splash screen
   lives = 5;
   background(100,50,100);
   fill(46,79,200);
-  textSize(30);
-  text('PADDLEBALL GAME', 260, 230);
   textSize(50);
-  text('HIT IT OR QUIT IT!', 176, 300);  //game title
+  text('PADDLEBALL GAME!', 176, 300);  //game title
   fill(46,79,148);
   textSize(20);
   text('Instructions: Click on one of the boxes below to choose game mode.', 120, 350);
@@ -77,7 +69,7 @@ function startGame(){ //starting splash screen
   text('When the ball reaches the bottom, the amount of lives will decrease by one', 120, 410);
   text('And a new array of balls will appear.', 120, 430)
   text('If the number of lives equals zero, game over!', 120, 450);
-  text("Also, avoid the balls with orbitals!", 120, 470);
+  text("Also, the balls with orbitals are worth five points!", 120, 470);
   text("If your paddle touches those, game over!",120,490);
   createButtons();
   if(mouseIsPressed &&

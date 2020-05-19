@@ -36,12 +36,12 @@ class Particle{
       this.angle += .41;
       for(var i = particles.length - 1; i>= 0; i--){
         if(particles[i].isColliding() && this.vel.y > 0) {
-          gameState=3;
-        }else if(particles[i].isColliding() && this.vel.y < 0){
-         gameState=3;
-      }
-      }
-  }
+       particles.splice(i, 1);
+       score=score+5;  //when ball touches top of paddle, ball disappears, +1 point
+   }
+ }
+}
+
   //end update+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   render(){
     fill(100,50,70);
@@ -78,10 +78,10 @@ class Particle{
   //end checkEdges+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   isColliding() {
-    if(this.loc.x + 20 > paddle.loc.x &&
-       this.loc.x - 20 < paddle.loc.x + paddle.w &&
-       this.loc.y + 20 > paddle.loc.y &&
-       this.loc.y - 20 < paddle.loc.y + paddle.h) //bounce off paddle
+    if(this.loc.x + 30 > paddle.loc.x &&
+       this.loc.x - 30 < paddle.loc.x + paddle.w &&
+       this.loc.y + 30 > paddle.loc.y &&
+       this.loc.y - 30 < paddle.loc.y + paddle.h) //bounce off paddle
        {
          return true;
         }

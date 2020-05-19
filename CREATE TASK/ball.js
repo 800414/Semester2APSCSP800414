@@ -1,10 +1,3 @@
-//Olivia Cordero (delete later)
-//March 20
-//CREATE TASK
-//setup function is called upon once when program begins
-
-
-
 class Ball {
   constructor(x, y, dx, dy){  //defining aspects of ball
    this.loc = createVector(x, y);
