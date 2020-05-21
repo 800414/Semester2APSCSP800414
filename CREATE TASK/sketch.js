@@ -119,6 +119,7 @@ text("Lives: " + lives, 10, 60); //number of lives in top left corner below scor
 runObjects();
 for(var i = 0; i < particles.length; i++){
   particles[i].run();
+}
   if(score===balls.length + score){  //win once all balls are cleared
     gameState=4;
   }
@@ -138,6 +139,7 @@ function endGame(){ //lose screen
   background(255,50,100,10);
   textSize(50);
   text('OOPS! GAME OVER!', 160, 300);
+  text('YOUR FINAL SCORE WAS ' + score, 100, 350);  //final score appear on screen
   PlayAgainButton.run();
   QuitButton.run();
 if(mouseIsPressed && //restart game
@@ -165,6 +167,7 @@ if(mouseIsPressed && //quit game
     textSize(50);
     text('CONGRATULATIONS!', 160, 300);
     text('YOU WIN!', 300,350);
+    text('YOUR FINAL SCORE WAS ' + score, 80, 400);  //final score appear on screen
     PlayAgainButton.run();
     QuitButton.run();
     if(mouseIsPressed && //restart game
@@ -192,5 +195,4 @@ function quitGame(){  //quit game scrren
   textSize(50);
   text('BYE!', 300, 300);
   text('HOPE YOU ENJOYED!:)', 150, 360);
-}
 }
