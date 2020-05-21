@@ -70,7 +70,6 @@ function startGame(){ //starting splash screen
   text('And a new array of balls will appear.', 120, 430)
   text('If the number of lives equals zero, game over!', 120, 450);
   text("Also, the balls with orbitals are worth five points!", 120, 470);
-  text("If your paddle touches those, game over!",120,490);
   createButtons();
   if(mouseIsPressed &&
       mouseX > 170 &&
